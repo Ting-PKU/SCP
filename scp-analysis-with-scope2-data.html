@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 SCP Analysis with SCoPE2 Data | Step1.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.32.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 SCP Analysis with SCoPE2 Data | Step1.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 SCP Analysis with SCoPE2 Data | Step1.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCP-Project</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#scp-analysis-with-scope2-data"><i class="fa fa-check"></i><b>1</b> SCP Analysis with SCoPE2 Data</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="scp-analysis-with-scope2-data" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> SCP Analysis with SCoPE2 Data<a href="#scp-analysis-with-scope2-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">############# 1. 读取maxquant处理后经DART-ID校正后的PSM矩阵</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;../MaxQuant_results/ev_updated.txt&quot;</span>, <span class="at">header =</span> T,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">stringsAsFactors =</span> F, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>t <span class="ot">=</span> <span class="fu">colnames</span>(data)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>RI <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;RI&#39;</span>,<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">16</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>t[<span class="fu">grep</span>(<span class="st">&#39;Reporter.intensity.corrected&#39;</span>,<span class="fu">colnames</span>(data))] <span class="ot">=</span> RI</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data) <span class="ot">=</span> t</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">############# 2. 加载所需R包</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(scp))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(ggpubr))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(RColorBrewer))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(impute))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(sva))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(scater))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(SCP.replication))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">############# 3. 注释16个chanel对应细胞类型</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>SampleAnnotation <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">&#39;data/sampleannotation.rds&#39;</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">############# 4. 构建scp project</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">readSCP</span>(<span class="at">featureData =</span> data,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>               <span class="at">colData =</span> SampleAnnotation,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>               <span class="at">channelCol =</span> <span class="st">&quot;Channel&quot;</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>               <span class="at">batchCol =</span> <span class="st">&quot;Raw.file&quot;</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>               <span class="at">removeEmptyCols =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Loading data as a &#39;SingleCellExperiment&#39; object</code></pre>
+<pre><code>## Splitting data based on &#39;Raw.file&#39;</code></pre>
+<pre><code>## Formatting sample metadata (colData)</code></pre>
+<pre><code>## Formatting data as a &#39;QFeatures&#39; object</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">############# 5. 比较不同通道信号强度</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;#e25822&quot;</span> ,<span class="st">&quot;#222222&quot;</span>, <span class="st">&quot;#f3c300&quot;</span>, <span class="st">&quot;#875692&quot;</span> ,<span class="st">&quot;#f38400&quot;</span>, <span class="st">&quot;#a1caf1&quot;</span> ,<span class="st">&quot;#be0032&quot;</span>, <span class="st">&quot;#c2b280&quot;</span> ,<span class="st">&quot;#848482&quot;</span>, <span class="st">&quot;#008856&quot;</span> ,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;#e68fac&quot;</span>, <span class="st">&quot;#0067a5&quot;</span> ,<span class="st">&quot;#f99379&quot;</span> ,<span class="st">&quot;#604e97&quot;</span> ,<span class="st">&quot;#f6a600&quot;</span> ,<span class="st">&quot;#b3446c&quot;</span> ,<span class="st">&quot;#dcd300&quot;</span> ,<span class="st">&quot;#882d17&quot;</span> ,<span class="st">&quot;#8db600&quot;</span> ,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;#654522&quot;</span> ,<span class="st">&quot;Red2&quot;</span>,<span class="st">&quot;#2b3d26&quot;</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>t <span class="ot">=</span> scp[,,<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## Warning: &#39;experiments&#39; dropped; see &#39;metadata&#39;</code></pre>
+<pre><code>## harmonizing input:
+##   removing 224 sampleMap rows not in names(experiments)
+##   removing 224 colData rownames not in sampleMap &#39;primary&#39;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>raw_file <span class="ot">=</span> <span class="fu">names</span>(t)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>t <span class="ot">=</span> <span class="fu">assay</span>(t)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(t) <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;RI&#39;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">log10</span>(t<span class="sc">/</span>t[,<span class="dv">1</span>]<span class="sc">+</span><span class="fl">0.00001</span>),<span class="at">las=</span><span class="dv">1</span>,<span class="at">ylab=</span><span class="st">&#39;log10(Relative intensity)&#39;</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> colors,<span class="at">outline =</span> F,<span class="at">main =</span> raw_file)</span></code></pre></div>
+<p><img src="Step1_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">############# 6. PSM过滤 </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>nPSMs <span class="ot">=</span> <span class="fu">dims</span>(scp)[<span class="dv">1</span>,]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># contaminant</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">filterFeatures</span>(scp,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                      <span class="sc">~</span> Reverse <span class="sc">!=</span> <span class="st">&quot;+&quot;</span><span class="sc">&amp;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                        Potential.contaminant <span class="sc">!=</span> <span class="st">&quot;+&quot;</span> )</span></code></pre></div>
+<pre><code>## &#39;Reverse&#39; found in 15 out of 15 assay(s)
+## &#39;Potential.contaminant&#39; found in 15 out of 15 assay(s)</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nPSMs_contaminant <span class="ot">=</span> <span class="fu">dims</span>(scp)[<span class="dv">1</span>,]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># PIF</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">filterFeatures</span>(scp,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                      <span class="sc">~!</span><span class="fu">is.na</span>(PIF)<span class="sc">&amp;</span> PIF <span class="sc">&gt;</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<pre><code>## &#39;PIF&#39; found in 15 out of 15 assay(s)</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>nPSMs_PIF <span class="ot">=</span> <span class="fu">dims</span>(scp)[<span class="dv">1</span>,]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># FDR</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">pep2qvalue</span>(scp,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">i =</span> <span class="fu">names</span>(scp),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">PEP =</span> <span class="st">&quot;dart_PEP&quot;</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">rowDataName =</span> <span class="st">&quot;qvalue_psm&quot;</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">pep2qvalue</span>(scp,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">i =</span> <span class="fu">names</span>(scp),</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">PEP =</span> <span class="st">&quot;dart_PEP&quot;</span>,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groupBy =</span> <span class="st">&quot;Leading.razor.protein&quot;</span>,</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">rowDataName =</span> <span class="st">&quot;qvalue_protein&quot;</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rbindRowData</span>(scp, <span class="fu">names</span>(scp)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  data.frame <span class="sc">%&gt;%</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> qvalue_psm)) <span class="sc">+</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="fl">0.01</span>),</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()<span class="sc">+</span><span class="fu">theme_pubr</span>()<span class="sc">+</span><span class="fu">xlab</span>(<span class="st">&quot;FDR of PSMs&quot;</span>)</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Step1_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">filterFeatures</span>(scp,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                      <span class="sc">~</span> <span class="sc">!</span><span class="fu">grepl</span>(<span class="st">&quot;REV|CON&quot;</span>, Leading.razor.protein))</span></code></pre></div>
+<pre><code>## &#39;Leading.razor.protein&#39; found in 15 out of 15 assay(s)</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">filterFeatures</span>(scp,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                       <span class="sc">~</span> qvalue_psm <span class="sc">&lt;</span> <span class="fl">0.01</span> <span class="sc">&amp;</span> qvalue_protein <span class="sc">&lt;</span> <span class="fl">0.01</span>)</span></code></pre></div>
+<pre><code>## &#39;qvalue_psm&#39; found in 15 out of 15 assay(s)
+## &#39;qvalue_protein&#39; found in 15 out of 15 assay(s)</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>nPSMs_FDR <span class="ot">=</span> <span class="fu">dims</span>(scp)[<span class="dv">1</span>,]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#三步过滤PSM保留数目</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">nPSMs =</span> nPSMs,<span class="at">nPSMs_contaminant =</span> nPSMs_contaminant,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">nPSMs_PIF =</span> nPSMs_PIF,<span class="at">nPSMs_FDR =</span> nPSMs_FDR)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>t <span class="ot">=</span> <span class="fu">apply</span>(df,<span class="dv">2</span>,mean)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>p <span class="ot">=</span> <span class="fu">barplot</span>(<span class="fu">round</span>(t),</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;#4BAAE0&quot;</span>,<span class="st">&quot;#badb33&quot;</span>, <span class="st">&quot;#f5c623&quot;</span>, <span class="st">&quot;#e84c45&quot;</span>),</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">beside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">las =</span> <span class="dv">2</span>, <span class="at">border =</span> <span class="cn">NA</span>,<span class="at">width =</span> <span class="fl">0.4</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&#39;Number of PSMs&#39;</span>,<span class="at">cex.axis =</span> <span class="fl">0.8</span>,</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>),<span class="at">mgp =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="fl">0.6</span>,<span class="dv">0</span>),<span class="at">space =</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>))</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(p, <span class="fu">round</span>(t)<span class="sc">+</span><span class="dv">300</span> , <span class="fu">as.vector</span>(<span class="fu">round</span>(t)),<span class="at">cex=</span><span class="dv">1</span>) </span></code></pre></div>
+<p><img src="Step1_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">######## 7. MeanSCR 单细胞样本信号应该远低于carrier信号</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>keepAssay <span class="ot">&lt;-</span> <span class="fu">dims</span>(scp)[<span class="dv">1</span>, ] <span class="sc">&gt;</span> <span class="dv">700</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(keepAssay)</span></code></pre></div>
+<pre><code>## keepAssay
+## TRUE 
+##   15</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> scp[, , keepAssay]</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>scp_bulk <span class="ot">=</span> scp[,,<span class="dv">8</span><span class="sc">:</span><span class="dv">15</span>]</span></code></pre></div>
+<pre><code>## Warning: &#39;experiments&#39; dropped; see &#39;metadata&#39;</code></pre>
+<pre><code>## harmonizing input:
+##   removing 112 sampleMap rows not in names(experiments)
+##   removing 112 colData rownames not in sampleMap &#39;primary&#39;</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>scp1 <span class="ot">&lt;-</span> <span class="fu">computeSCR</span>(scp[,,<span class="dv">2</span><span class="sc">:</span><span class="dv">7</span>],</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">i =</span> <span class="fu">names</span>(scp[,,<span class="dv">2</span><span class="sc">:</span><span class="dv">7</span>]),</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">colvar =</span> <span class="st">&quot;SampleType&quot;</span>,</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">carrierPattern =</span> <span class="st">&quot;Carrier&quot;</span>,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">samplePattern =</span> <span class="st">&quot;HeLa|U937|U937_Ctrl+|HeLa_Ctrl+&quot;</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">sampleFUN =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">rowDataName =</span> <span class="st">&quot;MeanSCR&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: &#39;experiments&#39; dropped; see &#39;metadata&#39;</code></pre>
+<pre><code>## harmonizing input:
+##   removing 144 sampleMap rows not in names(experiments)
+##   removing 144 colData rownames not in sampleMap &#39;primary&#39;</code></pre>
+<pre><code>## Warning: &#39;experiments&#39; dropped; see &#39;metadata&#39;</code></pre>
+<pre><code>## harmonizing input:
+##   removing 144 sampleMap rows not in names(experiments)
+##   removing 144 colData rownames not in sampleMap &#39;primary&#39;</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">=</span> scp1</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rbindRowData</span>(scp, <span class="at">i =</span> <span class="fu">names</span>(scp)) <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  data.frame <span class="sc">%&gt;%</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> MeanSCR)) <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;#e9ecef&quot;</span>,<span class="at">fill =</span> <span class="st">&#39;#404080&#39;</span>, <span class="at">alpha=</span><span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>( <span class="fl">0.1</span>),</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="fu">c</span>( <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;Number of PSMs&#39;</span>)<span class="sc">+</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()<span class="sc">+</span><span class="fu">theme_pubr</span>()</span></code></pre></div>
+<pre><code>## Warning: Transformation introduced infinite values in continuous x-axis</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 322 rows containing non-finite values (`stat_bin()`).</code></pre>
+<p><img src="Step1_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#MeanSCR&lt;0.1 筛选PSM</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">filterFeatures</span>(scp,</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>                       <span class="sc">~</span> <span class="sc">!</span><span class="fu">is.na</span>(MeanSCR) <span class="sc">&amp;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                         <span class="sc">!</span><span class="fu">is.infinite</span>(MeanSCR) <span class="sc">&amp;</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                         MeanSCR <span class="sc">&lt;</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<pre><code>## &#39;MeanSCR&#39; found in 6 out of 6 assay(s)</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="do">################ 8. 合并生成peptide x cell 矩阵</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co">#PSM 数据标准化</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">divideByReference</span>(scp,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">i =</span> <span class="fu">names</span>(scp),</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">colvar =</span> <span class="st">&quot;SampleType&quot;</span>,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">samplePattern =</span> <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">refPattern =</span> <span class="st">&quot;Reference&quot;</span>)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="co">#合并PSM为peptide</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>remove.duplicates <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">apply</span>(x, <span class="dv">2</span>, <span class="cf">function</span>(xx) xx[<span class="fu">which</span>(<span class="sc">!</span><span class="fu">is.na</span>(xx))[<span class="dv">1</span>]] )}</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>peptideAssays <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;peptides_&quot;</span>, <span class="fu">names</span>(scp))</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">aggregateFeaturesOverAssays</span>(scp,</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">i =</span> <span class="fu">names</span>(scp),</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">fcol =</span> <span class="st">&quot;Modified.sequence&quot;</span>,</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">name =</span> <span class="fu">paste0</span>(<span class="st">&quot;peptides_&quot;</span>, <span class="fu">names</span>(scp)),</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">fun =</span> remove.duplicates)</span></code></pre></div>
+<pre><code>## 
+Aggregated: 1/6</code></pre>
+<pre><code>## 
+Aggregated: 2/6</code></pre>
+<pre><code>## 
+Aggregated: 3/6</code></pre>
+<pre><code>## 
+Aggregated: 4/6</code></pre>
+<pre><code>## 
+Aggregated: 5/6</code></pre>
+<pre><code>## 
+Aggregated: 6/6</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">infIsNA</span>(scp, <span class="at">i =</span> peptideAssays)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">zeroIsNA</span>(scp, <span class="at">i =</span> peptideAssays)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">joinAssays</span>(scp,</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">i =</span> peptideAssays,</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">name =</span> <span class="st">&quot;peptides&quot;</span>)</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="do">################ 9. 过滤低质量单细胞</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="co">#计算medianCV,来自同一蛋白质的肽段表达水平variation</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">medianCVperCell</span>(scp,</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">i =</span> peptideAssays,</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groupBy =</span> <span class="st">&quot;Leading.razor.protein&quot;</span>,</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">nobs =</span> <span class="dv">3</span>,</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>                        <span class="at">norm =</span> <span class="st">&quot;SCoPE2&quot;</span>,</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>                        <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>                        <span class="at">colDataName =</span> <span class="st">&quot;MedianCV&quot;</span>)</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a><span class="fu">colData</span>(scp) <span class="sc">%&gt;%</span></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>  data.frame <span class="sc">%&gt;%</span></span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SampleType <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;HeLa&quot;</span>,<span class="st">&quot;U937&quot;</span>,<span class="st">&quot;Blank&quot;</span>,<span class="st">&quot;U937_Ctrl+&quot;</span>,<span class="st">&quot;HeLa_Ctrl+&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> MedianCV,</span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> SampleType)) <span class="sc">+</span></span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.55</span>)<span class="sc">+</span><span class="fu">theme_pubr</span>()<span class="sc">+</span></span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">brewer.pal</span>(<span class="dv">9</span>,<span class="st">&#39;Set1&#39;</span>))<span class="sc">+</span><span class="fu">ylab</span>(<span class="st">&#39;Density&#39;</span>)</span></code></pre></div>
+<p><img src="Step1_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colData</span>(scp) <span class="sc">%&gt;%</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  data.frame <span class="sc">%&gt;%</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">&quot;cells&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(MedianCV <span class="sc">&lt;</span> <span class="fl">0.55</span>,</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>         SampleType <span class="sc">%in%</span> <span class="fu">c</span>( <span class="st">&quot;HeLa&quot;</span>,<span class="st">&quot;U937&quot;</span>,<span class="st">&quot;U937_Ctrl+&quot;</span>,<span class="st">&quot;HeLa_Ctrl+&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(cells) <span class="ot">-&gt;</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  keep</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(keep)</span></code></pre></div>
+<pre><code>## [1] 62</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>scp1 <span class="ot">&lt;-</span> scp[, <span class="fu">rownames</span>(<span class="fu">colData</span>(scp))<span class="sc">%in%</span>keep, ]</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">=</span> scp1</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="do">################ 10. 合并生成protein x cell 矩阵</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co">#peptide数据标准化</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">sweep</span>(scp, </span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">i =</span> <span class="st">&quot;peptides&quot;</span>,</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">MARGIN =</span> <span class="dv">2</span>,</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">FUN =</span> <span class="st">&quot;/&quot;</span>,</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">STATS =</span> <span class="fu">colMedians</span>(<span class="fu">assay</span>(scp[[<span class="st">&quot;peptides&quot;</span>]]), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">name =</span> <span class="st">&quot;peptides_norm1&quot;</span>)</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">sweep</span>(scp,</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">i =</span> <span class="st">&quot;peptides_norm1&quot;</span>, <span class="at">MARGIN =</span> <span class="dv">1</span>,</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">FUN =</span> <span class="st">&quot;/&quot;</span>,</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">STATS =</span> <span class="fu">rowMeans</span>(<span class="fu">assay</span>(scp[[<span class="st">&quot;peptides_norm1&quot;</span>]]),</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>                              <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">name =</span> <span class="st">&quot;peptides_norm2&quot;</span>)</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">filterNA</span>(scp,</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">i =</span> <span class="st">&quot;peptides_norm2&quot;</span>,</span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>                <span class="at">pNA =</span> <span class="fl">0.95</span>)</span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">logTransform</span>(scp,</span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a>                    <span class="at">base =</span> <span class="dv">2</span>,</span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>                    <span class="at">i =</span> <span class="st">&quot;peptides_norm2&quot;</span>,</span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> <span class="st">&quot;peptides_log&quot;</span>)</span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a><span class="co">#合并peptide为protein</span></span>
+<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">aggregateFeatures</span>(scp,</span>
+<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a>                         <span class="at">i =</span> <span class="st">&quot;peptides_log&quot;</span>,</span>
+<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a>                         <span class="at">name =</span> <span class="st">&quot;proteins&quot;</span>,</span>
+<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a>                         <span class="at">fcol =</span> <span class="st">&quot;Leading.razor.protein&quot;</span>,</span>
+<span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a>                         <span class="at">fun =</span> matrixStats<span class="sc">::</span>colMedians, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Your quantitative and row data contain missing values. Please read the
+## relevant section(s) in the aggregateFeatures manual page regarding the
+## effects of missing values on data aggregation.</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="do">####统计单细胞中的蛋白种类</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>sc_protein <span class="ot">=</span> <span class="fu">assay</span>(scp[[<span class="st">&#39;proteins&#39;</span>]])</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>index <span class="ot">=</span> <span class="fu">c</span>()</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(sc_protein)[<span class="dv">2</span>]){</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  index <span class="ot">=</span> <span class="fu">c</span>(index,<span class="fu">table</span>(<span class="fu">is.na</span>(sc_protein[,i]))[<span class="dv">1</span>])</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>sc_protein <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">colnames</span>(sc_protein),<span class="at">detected_num =</span> index)</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(sc_protein<span class="sc">$</span>detected_num)</span></code></pre></div>
+<pre><code>## [1] 686.9355</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">=</span> <span class="fu">separate</span>(<span class="at">data =</span> sc_protein, <span class="at">col =</span> id, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;Raw_file&quot;</span>, <span class="st">&quot;t&quot;</span>), <span class="at">sep =</span> <span class="st">&quot;RI&quot;</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Protein_num =</span> t<span class="sc">$</span>detected_num,</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">group =</span> t<span class="sc">$</span>Raw_file)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>label <span class="ot">=</span> df <span class="sc">%&gt;%</span><span class="fu">group_by</span>(group)<span class="sc">%&gt;%</span><span class="fu">summarise_at</span>(<span class="fu">vars</span>(Protein_num), <span class="fu">list</span>(<span class="at">name =</span> median))</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">merge</span>(df,label,<span class="at">by=</span><span class="st">&#39;group&#39;</span>)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggbarplot</span>(</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>  df, <span class="at">x =</span> <span class="st">&quot;group&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Protein_num&quot;</span>,</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">fill =</span> <span class="st">&#39;group&#39;</span>,<span class="at">add =</span> <span class="fu">c</span>(<span class="st">&quot;mean_sd&quot;</span>),</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="cn">NA</span>,</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">&quot;#E41A1C&quot;</span> ,<span class="st">&quot;#377EB8&quot;</span> ,<span class="st">&quot;#4DAF4A&quot;</span> ,</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;#984EA3&quot;</span>, <span class="st">&quot;#FF7F00&quot;</span> ,<span class="st">&quot;#f5c623&quot;</span>),<span class="at">width =</span> <span class="fl">0.5</span>,</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">add.params =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>,<span class="at">size =</span> <span class="fl">0.5</span>),</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>)<span class="sc">+</span><span class="fu">xlab</span>(<span class="st">&#39;&#39;</span>)<span class="sc">+</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;Number of detected proteins&#39;</span>)<span class="sc">+</span></span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">800</span>))</span></code></pre></div>
+<p><img src="Step1_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="do">################ 11. protein矩阵处理</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="co">#标准化</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">sweep</span>(scp, <span class="at">i =</span> <span class="st">&quot;proteins&quot;</span>,</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">MARGIN =</span> <span class="dv">2</span>,</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">FUN =</span> <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">STATS =</span> <span class="fu">colMedians</span>(<span class="fu">assay</span>(scp[[<span class="st">&quot;proteins&quot;</span>]]),</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">name =</span> <span class="st">&quot;proteins_norm1&quot;</span>)</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">sweep</span>(scp,</span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">i =</span> <span class="st">&quot;proteins_norm1&quot;</span>,</span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">MARGIN =</span> <span class="dv">1</span>,</span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">FUN =</span> <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">STATS =</span> <span class="fu">rowMeans</span>(<span class="fu">assay</span>(scp[[<span class="st">&quot;proteins_norm1&quot;</span>]]),</span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>                              <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">name =</span> <span class="st">&quot;proteins_norm2&quot;</span>)</span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a><span class="co">#imputation 去除NA值</span></span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a><span class="fu">longFormat</span>(scp[, , <span class="st">&quot;proteins&quot;</span>]) <span class="sc">%&gt;%</span></span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>  data.frame <span class="sc">%&gt;%</span></span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(colname) <span class="sc">%&gt;%</span></span>
+<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">missingness =</span> <span class="fu">mean</span>(<span class="fu">is.na</span>(value))) <span class="sc">%&gt;%</span></span>
+<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> missingness)) <span class="sc">+</span></span>
+<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()<span class="sc">+</span><span class="fu">theme_pubr</span>()</span></code></pre></div>
+<pre><code>## Warning: &#39;experiments&#39; dropped; see &#39;metadata&#39;</code></pre>
+<pre><code>## harmonizing input:
+##   removing 496 sampleMap rows not in names(experiments)</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Step1_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">impute</span>(scp,</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">i =</span> <span class="st">&quot;proteins_norm2&quot;</span>,</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">name =</span> <span class="st">&quot;proteins_imptd&quot;</span>,</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">method =</span> <span class="st">&quot;knn&quot;</span>,</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">k =</span> <span class="dv">3</span>, <span class="at">rowmax =</span> <span class="dv">1</span>, <span class="at">colmax=</span> <span class="dv">1</span>,</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">maxp =</span> <span class="cn">Inf</span>, <span class="at">rng.seed =</span> <span class="dv">1234</span>)</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co">#去除批次效应</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>sce <span class="ot">&lt;-</span> <span class="fu">getWithColData</span>(scp, <span class="st">&quot;proteins_imptd&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: &#39;experiments&#39; dropped; see &#39;metadata&#39;</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>batch <span class="ot">&lt;-</span> <span class="fu">colData</span>(sce)<span class="sc">$</span>Raw.file</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(<span class="sc">~</span> SampleType, <span class="at">data =</span> <span class="fu">colData</span>(sce))</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">assay</span>(sce) <span class="ot">&lt;-</span> <span class="fu">ComBat</span>(<span class="at">dat =</span> <span class="fu">assay</span>(sce),</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">batch =</span> batch,</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mod =</span> model)</span></code></pre></div>
+<pre><code>## Found6batches
+## Adjusting for3covariate(s) or covariate level(s)
+## Standardizing Data across genes
+## Fitting L/S model and finding priors
+## Finding parametric adjustments
+## Adjusting the Data</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>scp <span class="sc">%&gt;%</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addAssay</span>(<span class="at">y =</span> sce,</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">name =</span> <span class="st">&quot;proteins_batchC&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addAssayLinkOneToOne</span>(<span class="at">from =</span> <span class="st">&quot;proteins_imptd&quot;</span>,</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">to =</span> <span class="st">&quot;proteins_batchC&quot;</span>) <span class="ot">-&gt;</span></span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>  scp</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="co">#校正蛋白表达矩阵</span></span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">sweep</span>(scp, <span class="at">i =</span> <span class="st">&quot;proteins_batchC&quot;</span>,</span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">MARGIN =</span> <span class="dv">2</span>,</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">FUN =</span> <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">STATS =</span> <span class="fu">colMedians</span>(<span class="fu">assay</span>(scp[[<span class="st">&quot;proteins_batchC&quot;</span>]]),</span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>                                <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">name =</span> <span class="st">&quot;proteins_batchC_norm1&quot;</span>)</span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a>scp <span class="ot">&lt;-</span> <span class="fu">sweep</span>(scp,</span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">i =</span> <span class="st">&quot;proteins_batchC_norm1&quot;</span>,</span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">MARGIN =</span> <span class="dv">1</span>,</span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">FUN =</span> <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">STATS =</span> <span class="fu">rowMeans</span>(<span class="fu">assay</span>(scp[[<span class="st">&quot;proteins_batchC_norm1&quot;</span>]]),</span>
+<span id="cb60-19"><a href="#cb60-19" aria-hidden="true" tabindex="-1"></a>                              <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb60-20"><a href="#cb60-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">name =</span> <span class="st">&quot;proteins_scp&quot;</span>)</span>
+<span id="cb60-21"><a href="#cb60-21" aria-hidden="true" tabindex="-1"></a><span class="do">################ 12. 细胞聚类与可视化</span></span>
+<span id="cb60-22"><a href="#cb60-22" aria-hidden="true" tabindex="-1"></a><span class="co">#Dimension reduction</span></span>
+<span id="cb60-23"><a href="#cb60-23" aria-hidden="true" tabindex="-1"></a>proteins_scp <span class="ot">=</span> scp[[<span class="st">&#39;proteins_scp&#39;</span>]]</span>
+<span id="cb60-24"><a href="#cb60-24" aria-hidden="true" tabindex="-1"></a>protein <span class="ot">=</span> <span class="fu">assay</span>(scp[[<span class="st">&#39;proteins_scp&#39;</span>]])</span>
+<span id="cb60-25"><a href="#cb60-25" aria-hidden="true" tabindex="-1"></a>pcaRes <span class="ot">&lt;-</span> <span class="fu">pcaSCoPE2</span>(proteins_scp)</span>
+<span id="cb60-26"><a href="#cb60-26" aria-hidden="true" tabindex="-1"></a>pcaPercentVar <span class="ot">&lt;-</span> <span class="fu">round</span>(pcaRes<span class="sc">$</span>values[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="sc">/</span> <span class="fu">sum</span>(pcaRes<span class="sc">$</span>values) <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb60-27"><a href="#cb60-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot PCA</span></span>
+<span id="cb60-28"><a href="#cb60-28" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> SampleAnnotation</span>
+<span id="cb60-29"><a href="#cb60-29" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>id <span class="ot">=</span> <span class="fu">paste0</span>(df<span class="sc">$</span>Raw.file,df<span class="sc">$</span>Channel)</span>
+<span id="cb60-30"><a href="#cb60-30" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(df) <span class="ot">=</span> df<span class="sc">$</span>id</span>
+<span id="cb60-31"><a href="#cb60-31" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> df[df<span class="sc">$</span>id<span class="sc">%in%</span><span class="fu">colnames</span>(protein),]</span>
+<span id="cb60-32"><a href="#cb60-32" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">PC =</span> pcaRes<span class="sc">$</span>vectors[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>],</span>
+<span id="cb60-33"><a href="#cb60-33" aria-hidden="true" tabindex="-1"></a>                <span class="fu">colData</span>(proteins_scp))</span>
+<span id="cb60-34"><a href="#cb60-34" aria-hidden="true" tabindex="-1"></a>df<span class="sc">%&gt;%</span></span>
+<span id="cb60-35"><a href="#cb60-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb60-36"><a href="#cb60-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> PC<span class="fl">.1</span>,</span>
+<span id="cb60-37"><a href="#cb60-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> PC<span class="fl">.2</span>,<span class="at">col =</span> SampleType) <span class="sc">+</span></span>
+<span id="cb60-38"><a href="#cb60-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="dv">1</span>,<span class="at">shape =</span> <span class="dv">16</span>,<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb60-39"><a href="#cb60-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="fu">paste0</span>(<span class="st">&quot;PC1 (&quot;</span>, pcaPercentVar[<span class="dv">1</span>], <span class="st">&quot;%)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb60-40"><a href="#cb60-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">paste0</span>(<span class="st">&quot;PC2 (&quot;</span>, pcaPercentVar[<span class="dv">2</span>], <span class="st">&quot;%)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb60-41"><a href="#cb60-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;U937&quot;</span><span class="ot">=</span><span class="st">&quot;#0089C2&quot;</span>,<span class="st">&quot;HeLa&quot;</span><span class="ot">=</span><span class="st">&quot;#F75A2E&quot;</span>,</span>
+<span id="cb60-42"><a href="#cb60-42" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;U937_Ctrl+&quot;</span> <span class="ot">=</span> <span class="st">&quot;#4DAF4A&quot;</span>,<span class="st">&quot;HeLa_Ctrl+&quot;</span> <span class="ot">=</span> <span class="st">&quot;#f7cd13&quot;</span></span>
+<span id="cb60-43"><a href="#cb60-43" aria-hidden="true" tabindex="-1"></a>  ))<span class="sc">+</span><span class="fu">theme_pubr</span>()</span></code></pre></div>
+<p><img src="Step1_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/%s",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+},
+"split_by": "chapter"
+});
+});
+</script>
+
+</body>
+
+</html>
