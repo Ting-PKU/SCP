@@ -1,3 +1,3 @@
-# G-CSF-project
-analysis scripts
-#### Part1
+# Single Cell Proteomics
+A collection of scripts for SCP project
+
